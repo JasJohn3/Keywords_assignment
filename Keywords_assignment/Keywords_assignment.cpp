@@ -1,5 +1,5 @@
 // Keywords_assignment.cpp : Defines the entry point for the console application.
-//
+//Publisher: Jason Johnson
 
 #include "stdafx.h"
 #include <iostream>
