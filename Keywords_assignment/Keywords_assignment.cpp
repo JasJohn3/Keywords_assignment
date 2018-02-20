@@ -12,16 +12,38 @@ using namespace std;
 void Jumble();
 int main()
 {
+	bool Play_Again = false;
+	string User_Input;
 	cout << "Welcome to Keyword\n\n";
 	cout << "You will have three words to guess, good luck!\n\n";
 	system("pause");
-	for (int i = 0; i < 3; ++i)
+	do
 	{
-		cout << "ROUND: " << i << "\n\n";
-		Jumble();
-	}
-	cout << "\nThanks for playing.\n";
-		
+		for (int i = 0; i < 3; ++i)
+		{
+			cout << "ROUND: " << i << "\n\n";
+			Jumble();
+		}
+		cout << "Would you like to play again!\n\n";
+		cout << "Please enter 'Y' or 'N'";
+		cin >> User_Input;
+		if (User_Input == "Y" || User_Input == "y")
+		{
+			Play_Again = true;
+		}
+		else if (User_Input == "N" || User_Input == "n")
+		{
+			Play_Again = false;
+		}
+		else
+		{
+			cout << "Invalid input";
+		}
+
+
+	} while (Play_Again);
+	cout << "\nThanks for playing. ";
+	system("pause");
     return 0;
 }
 void Jumble() {
