@@ -30,11 +30,11 @@ void Jumble() {
 	const int NUM_WORDS = 10;
 	const string WORDS[NUM_WORDS][NUM_FIELDS] =
 	{
-		{ "wall", "Do you feel you're banging your head against something?" },
+		{ "Wall", "Do you feel you're banging your head against something?" },
 		{ "Glasses", "These might help you see the answer" },
-		{ "labored", "Goind slowly is it?" },
-		{ "persistent", "You never give up do you.  You seem very ... MMM, what's the word?" },
-		{ "jumble", "It's what the game is all about." },
+		{ "Labored", "Goind slowly is it?" },
+		{ "Persistent", "You never give up do you.  You seem very ... MMM, what's the word?" },
+		{ "Jumble", "It's what the game is all about." },
 		{ "Home", "It's where the Heart is!" },
 		{ "Help", "I need your ..." },
 		{ "Rome", "It wasn't built in a day" },
