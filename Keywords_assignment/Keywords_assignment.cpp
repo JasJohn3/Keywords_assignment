@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void Jumble();
+void Jumble();  //Declare a function named Jumble() set to void return type
 int main()
 {
 	bool Play_Again = false;
@@ -19,7 +19,7 @@ int main()
 	system("pause");
 	do
 	{
-		for (int i = 0; i < 3; ++i)
+		for (int i = 0; i < 3; ++i)					//for loop runs the function Jumble() three times
 		{
 			cout << "ROUND: " << i << "\n\n";
 			Jumble();
@@ -29,15 +29,15 @@ int main()
 		cin >> User_Input;
 		if (User_Input == "Y" || User_Input == "y")
 		{
-			Play_Again = true;
+			Play_Again = true; // user input continues to run the while loop
 		}
 		else if (User_Input == "N" || User_Input == "n")
 		{
-			Play_Again = false;
+			Play_Again = false; //user input ends the while loop if no
 		}
 		else
 		{
-			cout << "Invalid input";
+			cout << "Invalid input"; //Error Catching Protocall code
 		}
 
 
@@ -46,11 +46,12 @@ int main()
 	system("pause");
     return 0;
 }
+//Define the function Jumble() declared in the beginning of the program
 void Jumble() {
 	
 	enum fields { WORD, HINT, NUM_FIELDS };
 	const int NUM_WORDS = 10;
-	const string WORDS[NUM_WORDS][NUM_FIELDS] =
+	const string WORDS[NUM_WORDS][NUM_FIELDS] =								//Declares the 10 words for the program and sets a key for the hints
 	{
 		{ "Wall", "Do you feel you're banging your head against something?" },
 		{ "Glasses", "These might help you see the answer" },
@@ -68,6 +69,8 @@ void Jumble() {
 
 	enum difficulty { EASY, MEDIUM, HARD, NUM_DIFF_LEVELS };
 	cout << "There Are " << NUM_DIFF_LEVELS << " difficulty levels.";
+
+	//Use random to sort the words in the Game
 	
 	srand(static_cast<unsigned int>(time(0)));
 	int choice = (rand() % NUM_WORDS);
