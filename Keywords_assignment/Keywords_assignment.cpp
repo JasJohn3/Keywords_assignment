@@ -9,23 +9,44 @@
 
 using namespace std;
 
+void Jumble();
 int main()
 {
+	cout << "Welcome to Keyword\n\n";
+	cout << "You will have three words to guess, good luck!\n\n";
+	system("pause");
+	for (int i = 0; i < 3; ++i)
+	{
+		cout << "ROUND: " << i << "\n\n";
+		Jumble();
+	}
+	cout << "\nThanks for playing.\n";
+		
+    return 0;
+}
+void Jumble() {
+	
 	enum fields { WORD, HINT, NUM_FIELDS };
-	const int NUM_WORDS = 5;
+	const int NUM_WORDS = 10;
 	const string WORDS[NUM_WORDS][NUM_FIELDS] =
 	{
-		{"wall", "Do you feel you're banging your head against something?"},
-		{"Glasses", "These might help you see the answer"},
-		{"labored", "Goind slowly is it?"},
-		{"persistent", "You never give up do you.  You seem very ... MMM, what's the word?"},
-		{"jumble", "It's what the game is all about."}
+		{ "wall", "Do you feel you're banging your head against something?" },
+		{ "Glasses", "These might help you see the answer" },
+		{ "labored", "Goind slowly is it?" },
+		{ "persistent", "You never give up do you.  You seem very ... MMM, what's the word?" },
+		{ "jumble", "It's what the game is all about." },
+		{ "Home", "It's where the Heart is!" },
+		{ "Help", "I need your ..." },
+		{ "Rome", "It wasn't built in a day" },
+		{ "Boat", "Row, row, row your ..." },
+		{ "Simple", "Keep it ... Stupid" }
+
 
 	};
 
 	enum difficulty { EASY, MEDIUM, HARD, NUM_DIFF_LEVELS };
 	cout << "There Are " << NUM_DIFF_LEVELS << " difficulty levels.";
-
+	
 	srand(static_cast<unsigned int>(time(0)));
 	int choice = (rand() % NUM_WORDS);
 	string theWord = WORDS[choice][WORD]; //word to guess
@@ -56,30 +77,25 @@ int main()
 
 	while ((guess != theWord) && (guess != "quit"))
 	{
-	if (guess == "hint")
-	{
-		cout << theHint;
-	}
-	else
-	{
-		cout << "Sorry, that's not it.";
-	}
+		if (guess == "hint")
+		{
+			cout << theHint;
+		}
+		else
+		{
+			cout << "Sorry, that's not it.";
+		}
 
-	cout << "\n\nYour Guess: ";
-	cin >> guess;
+		cout << "\n\nYour Guess: ";
+		cin >> guess;
 	}
 
 	if (guess == theWord)
 	{
-		cout << "\nThaats it! You guessed it !\n";
+		cout << "\nThats it! You guessed it !\n";
 
 	}
 
 
-	cout << "\nThanks for playing.\n";
-	
 	system("pause");
-	
-    return 0;
 }
-
