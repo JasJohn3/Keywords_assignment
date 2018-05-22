@@ -37,7 +37,8 @@ int main()
 		}
 		else
 		{
-			cout << "Invalid input"; //Error Catching Protocall code 
+			cout << "Invalid input" << endl; //Error Catching Protocall code 
+			cout << "Exiting the program" << endl;
 			//This protocall needs improvement.  Exits the loop after an incorrect answer.
 		}
 
